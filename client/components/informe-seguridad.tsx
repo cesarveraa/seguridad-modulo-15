@@ -63,7 +63,7 @@ export function InformeSeguridad({ id }: { id: string }) {
     }));
 
     try {
-      const res = await fetch("http://localhost:8000/analyze-risk", {
+      const res = await fetch("https://seguridad-modulo-15.vercel.app/analyze-risk", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -150,7 +150,7 @@ export function InformeSeguridad({ id }: { id: string }) {
 
     try {
       // Resumen general
-      const genRes = await fetch("http://localhost:8000/general-analysis", {
+      const genRes = await fetch("https://seguridad-modulo-15.vercel.app/general-analysis", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -163,7 +163,7 @@ export function InformeSeguridad({ id }: { id: string }) {
       setGeneralAnalysis(summary);
 
       // Controles recomendados
-      const ctrlRes = await fetch("http://localhost:8000/controls-analysis", {
+      const ctrlRes = await fetch("https://seguridad-modulo-15.vercel.app/controls-analysis", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
